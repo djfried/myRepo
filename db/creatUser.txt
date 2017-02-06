@@ -1,0 +1,20 @@
+db.createUser({
+    user: 'doug',
+    pwd: 'pwd',
+    roles: [{ role: 'readWrite', db:'myDb'}]
+})
+
+db.createUser( { user: "admin",
+                 pwd: "Aurora_88",
+                 roles: [ { role: "clusterAdmin", db: "admin" },
+                          { role: "readAnyDatabase", db: "admin" },
+                          "readWrite"] },
+               { w: "majority" , wtimeout: 5000 } )
+
+db.createUser(
+   {
+     user: "python",
+     pwd: "W3lc0me31",
+     roles: [ "readWrite"]
+   }
+)

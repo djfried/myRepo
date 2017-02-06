@@ -1,0 +1,17 @@
+load ticker
+
+do I own stocck?
+	yes
+
+	no	
+		compare price and sector 50 day sma
+			if sectorSMA < price
+				continue
+			else next ticker
+		compare price to 20 day and 50 day sma
+			if price < SMA
+				buy
+			else next ticker
+
+		
+

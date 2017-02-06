@@ -19,7 +19,7 @@ def getStockDto( symbol,company, sector, industry, country, mrktCap, pe, price, 
     return stock
 
 def insertIntoDb(dbName, collection, doc):
-    client = pymongo.MongoClient("mongodb://python:W3lc0me1@35.162.119.179/"+dbName)  # defaults to port 27017
+    client = pymongo.MongoClient("mongodb://python:W3lc0me31@52.32.161.247/"+dbName)  # defaults to port 27017
 
     db = client[dbName]
 
@@ -63,17 +63,11 @@ def main():
         f.close()
         emailUtil.sendMail('alertmail760@gmail.com', ['dougfrieders@gmail.com'], 'Stock Report '+ time.strftime("%m/%d/%Y"), 'A new Document has arrived!', ['stocks.txt'])
 
-# insertIntoDb("financial_db","daily_finviz_stocks",doc)
+    insertIntoDb("financial_db","daily_finviz_stocks",doc)
 
 # except IndexError as e:
 #     print "excetion" , e
 
 
-try:
-    main()
-except urllib2.HTTPError, e:
-    emailUtil.sendAlert()
-except urllib2.URLError, e:
-    emailUtil.error()
-except Exception:
-    emailUtil.sendAlert()
+
+main()
