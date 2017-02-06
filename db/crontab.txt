@@ -1,0 +1,1 @@
+*    20     *     *     1-5         python /home/ec2-user/cronjobs/FinancialAnalysis/timeTeast.py
